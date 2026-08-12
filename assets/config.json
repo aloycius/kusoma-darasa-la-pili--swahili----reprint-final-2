@@ -3,7 +3,8 @@
   "bundleVersion": "1",
   "languages": {
     "available": [
-      "sw"
+      "sw",
+      "sw-TZ"
     ],
     "default": "sw"
   },
@@ -12,7 +13,7 @@
     "easyRead": false,
     "glossary": false,
     "eli5": false,
-    "readAloud": false,
+    "readAloud": true,
     "autoplay": true,
     "showTutorial": true,
     "showNavigationControls": true,
@@ -20,7 +21,7 @@
     "notepad": false,
     "state": true,
     "characterDisplay": false,
-    "highlight": false,
+    "highlight": true,
     "activities": true
   },
   "analytics": {

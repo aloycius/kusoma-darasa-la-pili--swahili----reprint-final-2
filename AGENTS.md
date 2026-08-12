@@ -7,7 +7,7 @@ This document describes the structure of this Accessible Digital Textbook (ADT) 
 **Kusoma: Kitabu cha Mwanafunzi, Darasa la Pili** — Kitabu hiki ni cha Kusoma kwa mwanafunzi wa Darasa la Pili nchini Tanzania, kimeandikwa kwa lugha ya Kiswahili na kuandaliwa na Taasisi ya Elimu Tanzania kwa shule za msingi zinazotumia Kiswahili. Kinafundisha stadi za awali za usomaji kama kutambua herufi mwambatano, kusoma silabi, maneno, sentensi, hadithi, mashairi na mazungumzo, hadi kusoma kwa ufasaha na kwa ufahamu. Maudhui yake yanafaa watoto wa shule ya msingi ya awali na yanasisitiza ujifunzaji wa hatua kwa hatua kupitia picha, maswali, nyimbo, hadithi na shughuli shirikishi. Pia kinabeba maadili na mada za maisha ya kila siku kama usafi, mazingira, afya, usalama, haki za mtoto, amani na uwajibikaji.
 
 - **Source language**: `sw`
-- **Available languages in this bundle**: `sw`
+- **Available languages in this bundle**: `sw`, `sw-TZ`
 - **Total pages**: 88
 
 ## Quick Overview
@@ -46,7 +46,7 @@ KUSOMA-DARASA-LA-PILI--SWAHILI----Reprint-Final-2/
 │   │   ├── navigation/
 │   │   │   └── nav.html              # Navigation sidebar fragment
 │   │   └── i18n/
-│   │       └── {lang}/               # One directory per language: sw
+│   │       └── {lang}/               # One directory per language: sw, sw-TZ
 │   │           ├── texts.json        # All text content (textId → string)
 │   │           ├── audios.json       # Audio mappings (textId → mp3 filename)
 │   │           ├── videos.json       # Video mappings (currently unused)
@@ -217,7 +217,7 @@ A flat `Record<textId, string>` containing every piece of text in the book. Exam
 ```json
 {
   "pg001_gp001_tx001": "",
-  "pg001_im001": ""
+  "pg001_im001": "Cheti cha ithibati cha serikali ya Tanzania kwa kitabu cha mwanafunzi wa Darasa la Pili. Kinaonyesha kuwa kitabu kimeidhinishwa na Wizara ya Elimu, Sayansi na Teknolojia."
 }
 ```
 
@@ -243,7 +243,8 @@ Controls which features the reader UI enables. This book's config:
   "bundleVersion": "1",
   "languages": {
     "available": [
-      "sw"
+      "sw",
+      "sw-TZ"
     ],
     "default": "sw"
   },
@@ -252,7 +253,7 @@ Controls which features the reader UI enables. This book's config:
     "easyRead": false,
     "glossary": false,
     "eli5": false,
-    "readAloud": false,
+    "readAloud": true,
     "autoplay": true,
     "showTutorial": true,
     "showNavigationControls": true,
@@ -260,7 +261,7 @@ Controls which features the reader UI enables. This book's config:
     "notepad": false,
     "state": true,
     "characterDisplay": false,
-    "highlight": false,
+    "highlight": true,
     "activities": true
   },
   "analytics": {
