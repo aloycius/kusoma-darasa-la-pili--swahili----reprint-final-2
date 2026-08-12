@@ -217,7 +217,7 @@ A flat `Record<textId, string>` containing every piece of text in the book. Exam
 ```json
 {
   "pg001_gp001_tx001": "",
-  "pg001_im001": "Cheti cha ithibati cha serikali ya Tanzania kwa kitabu cha mwanafunzi wa Darasa la Pili. Kinaonyesha kuwa kitabu kimeidhinishwa na Wizara ya Elimu, Sayansi na Teknolojia."
+  "pg001_im001": ""
 }
 ```
 
@@ -261,7 +261,7 @@ Controls which features the reader UI enables. This book's config:
     "notepad": false,
     "state": true,
     "characterDisplay": false,
-    "highlight": true,
+    "highlight": false,
     "activities": true
   },
   "analytics": {
