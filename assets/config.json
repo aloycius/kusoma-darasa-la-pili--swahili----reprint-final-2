@@ -1,0 +1,38 @@
+{
+  "title": "Kusoma: Kitabu cha Mwanafunzi, Darasa la Pili",
+  "bundleVersion": "1",
+  "languages": {
+    "available": [
+      "sw"
+    ],
+    "default": "sw"
+  },
+  "features": {
+    "signLanguage": false,
+    "easyRead": false,
+    "glossary": false,
+    "eli5": false,
+    "readAloud": false,
+    "autoplay": true,
+    "showTutorial": true,
+    "showNavigationControls": true,
+    "describeImages": true,
+    "notepad": false,
+    "state": true,
+    "characterDisplay": false,
+    "highlight": false,
+    "activities": false
+  },
+  "analytics": {
+    "enabled": false,
+    "siteId": 0,
+    "trackerUrl": "https://unisitetracker.unicef.io/matomo.php",
+    "srcUrl": "https://unisitetracker.unicef.io/matomo.js"
+  },
+  "lockedSettings": [
+    "dockLayout",
+    "theme",
+    "iconSize",
+    "reduceMotion"
+  ]
+}
