@@ -8,7 +8,7 @@ This document describes the structure of this Accessible Digital Textbook (ADT) 
 
 - **Source language**: `sw`
 - **Available languages in this bundle**: `sw`
-- **Total pages**: 0
+- **Total pages**: 88
 
 ## Quick Overview
 
@@ -196,6 +196,11 @@ An ordered array that defines the navigation spine. Every page section and quiz 
 
 ```json
 [
+  { "section_id": "pg001_sec001", "href": "index.html", "page_number": 1 },
+  { "section_id": "pg002_sec001", "href": "pg002_sec001.html" },
+  { "section_id": "pg003_sec001", "href": "pg003_sec001.html" },
+  { "section_id": "pg004_sec001", "href": "pg004_sec001.html" },
+  { "section_id": "pg005_sec001", "href": "pg005_sec001.html" }
 ]
 ```
 
@@ -256,7 +261,7 @@ Controls which features the reader UI enables. This book's config:
     "state": true,
     "characterDisplay": false,
     "highlight": false,
-    "activities": false
+    "activities": true
   },
   "analytics": {
     "enabled": false,
