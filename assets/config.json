@@ -1,6 +1,6 @@
 {
   "title": "Kusoma: Kitabu cha Mwanafunzi, Darasa la Pili",
-  "bundleVersion": "1",
+  "bundleVersion": "2",
   "languages": {
     "available": [
       "sw",
@@ -9,7 +9,7 @@
     "default": "sw"
   },
   "features": {
-    "signLanguage": false,
+    "signLanguage": true,
     "easyRead": false,
     "glossary": false,
     "eli5": false,
