@@ -11,6 +11,225 @@
     <link href="./assets/libs/fontawesome/css/all.min.css" rel="stylesheet">
     <link href="./assets/fonts.css" rel="stylesheet">
 <link rel="stylesheet" href="./assets/sign-language-video.css">
+    <style>
+      .caterpillar-scene {
+        --segment: clamp(3.2rem, 8.25vw, 4.7rem);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: clamp(7.8rem, 18vw, 10.8rem);
+        padding: clamp(2.4rem, 6vw, 3.6rem) 0 clamp(1.25rem, 3vw, 2rem);
+        overflow: visible;
+      }
+
+      .caterpillar {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: max-content;
+        filter: drop-shadow(0 1px 0 rgba(15, 35, 16, 0.16));
+      }
+
+      .caterpillar-head,
+      .caterpillar-segment,
+      .caterpillar-tail {
+        position: relative;
+        flex: 0 0 auto;
+        border: clamp(2px, 0.32vw, 3px) solid #142c17;
+      }
+
+      .caterpillar-head {
+        z-index: 20;
+        width: calc(var(--segment) * 1.02);
+        height: calc(var(--segment) * 1.02);
+        border-radius: 48% 52% 48% 52%;
+        background:
+          radial-gradient(circle at 33% 23%, rgba(111, 190, 91, 0.72) 0 8%, transparent 9%),
+          radial-gradient(circle at 68% 77%, rgba(3, 65, 10, 0.7) 0 7%, transparent 8%),
+          linear-gradient(145deg, #238825 0 54%, #116a1b 55% 100%);
+      }
+
+      .caterpillar-antenna {
+        position: absolute;
+        z-index: -1;
+        top: calc(var(--segment) * -0.62);
+        width: calc(var(--segment) * 0.43);
+        height: calc(var(--segment) * 0.63);
+        border-top: clamp(2px, 0.32vw, 3px) solid #111;
+        border-left: clamp(2px, 0.32vw, 3px) solid #111;
+        border-radius: 70% 0 0 0;
+        transform-origin: bottom center;
+      }
+
+      .caterpillar-antenna::after {
+        content: "";
+        position: absolute;
+        top: calc(var(--segment) * -0.11);
+        left: calc(var(--segment) * -0.12);
+        width: calc(var(--segment) * 0.2);
+        height: calc(var(--segment) * 0.2);
+        border: clamp(2px, 0.32vw, 3px) solid #111;
+        border-radius: 50%;
+        background: #fff;
+      }
+
+      .caterpillar-antenna-left {
+        left: calc(var(--segment) * 0.05);
+        transform: rotate(-38deg);
+      }
+
+      .caterpillar-antenna-right {
+        right: calc(var(--segment) * 0.02);
+        transform: scaleX(-1) rotate(-27deg);
+      }
+
+      .caterpillar-eye {
+        position: absolute;
+        top: 26%;
+        width: 18%;
+        height: 34%;
+        border: 2px solid #080808;
+        border-radius: 50%;
+        background: #fff;
+        box-shadow: inset 2px 0 0 rgba(175, 220, 164, 0.8);
+      }
+
+      .caterpillar-eye-left { left: 27%; }
+      .caterpillar-eye-right { right: 25%; }
+
+      .caterpillar-eye::before {
+        content: "";
+        position: absolute;
+        left: 30%;
+        top: 18%;
+        width: 40%;
+        height: 64%;
+        border-radius: 50%;
+        background: #101010;
+      }
+
+      .caterpillar-eye::after {
+        content: "";
+        position: absolute;
+        left: 41%;
+        top: 27%;
+        width: 16%;
+        height: 24%;
+        border-radius: 50%;
+        background: #fff;
+      }
+
+      .caterpillar-nose {
+        position: absolute;
+        left: 48%;
+        top: 61%;
+        width: 5%;
+        height: 5%;
+        border-radius: 50%;
+        background: #0b3b0f;
+        box-shadow: calc(var(--segment) * 0.09) 0 #0b3b0f;
+      }
+
+      .caterpillar-smile {
+        position: absolute;
+        left: 35%;
+        bottom: 14%;
+        width: 37%;
+        height: 16%;
+        border-bottom: 3px solid #0b2a0d;
+        border-radius: 0 0 50% 50%;
+        transform: rotate(-3deg);
+      }
+
+      .caterpillar-cheek {
+        position: absolute;
+        bottom: 23%;
+        width: 8%;
+        height: 6%;
+        border-radius: 50%;
+        background: rgba(4, 70, 12, 0.75);
+      }
+
+      .caterpillar-cheek-left { left: 20%; }
+      .caterpillar-cheek-right { right: 15%; }
+
+      .caterpillar-segment {
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--segment);
+        height: var(--segment);
+        margin-left: calc(var(--segment) * -0.14);
+        border-radius: 50%;
+        background:
+          radial-gradient(circle at 29% 23%, rgba(191, 235, 180, 0.82) 0 12%, transparent 34%),
+          linear-gradient(135deg, #a8dc9d 0%, #82c57c 65%, #64af62 100%);
+        box-shadow:
+          inset calc(var(--segment) * -0.09) calc(var(--segment) * -0.05) calc(var(--segment) * 0.12) rgba(44, 128, 48, 0.4),
+          inset calc(var(--segment) * 0.08) calc(var(--segment) * 0.04) calc(var(--segment) * 0.1) rgba(232, 250, 225, 0.54);
+      }
+
+      .caterpillar-segment:nth-of-type(even) { transform: translateY(calc(var(--segment) * 0.03)); }
+      .caterpillar-segment:nth-of-type(odd) { transform: translateY(calc(var(--segment) * -0.025)); }
+
+      .caterpillar-word {
+        position: relative;
+        z-index: 2;
+        color: #ed111a;
+        font-size: calc(var(--segment) * 0.48);
+        font-weight: 400;
+        line-height: 1;
+        transform: translateY(-2%);
+      }
+
+      .caterpillar-leg {
+        position: absolute;
+        z-index: -1;
+        left: 43%;
+        bottom: calc(var(--segment) * -0.18);
+        width: calc(var(--segment) * 0.15);
+        height: calc(var(--segment) * 0.28);
+        border-left: clamp(3px, 0.42vw, 4px) solid #122716;
+        border-bottom: clamp(3px, 0.42vw, 4px) solid #122716;
+        border-radius: 0 0 0 75%;
+        transform: rotate(-24deg);
+      }
+
+      .caterpillar-segment:nth-of-type(even) .caterpillar-leg {
+        left: 60%;
+        transform: rotate(23deg) scaleX(-1);
+      }
+
+      .caterpillar-tail {
+        z-index: 5;
+        margin-left: calc(var(--segment) * -0.16);
+        border-radius: 48% 52% 50% 50%;
+        background: linear-gradient(145deg, #31862f, #15611b);
+        box-shadow: inset -5px -3px 7px rgba(6, 61, 13, 0.45);
+      }
+
+      .caterpillar-tail-large {
+        width: calc(var(--segment) * 0.6);
+        height: calc(var(--segment) * 0.66);
+        transform: translateY(calc(var(--segment) * 0.16));
+      }
+
+      .caterpillar-tail-small {
+        width: calc(var(--segment) * 0.38);
+        height: calc(var(--segment) * 0.45);
+        transform: translateY(calc(var(--segment) * 0.22));
+      }
+
+      @media (max-width: 520px) {
+        .caterpillar-scene { --segment: clamp(2.2rem, 9vw, 3rem); }
+        .caterpillar-head,
+        .caterpillar-segment,
+        .caterpillar-tail { border-width: 2px; }
+        .caterpillar-leg { border-width: 2px; }
+        .caterpillar-smile { border-bottom-width: 2px; }
+      }
+    </style>
 </head>
 
 <body class="min-h-screen flex items-center justify-center">
@@ -25,12 +244,30 @@
       </p>
     </div>
 
-    <div class="relative mb-6 sm:mb-8 lg:mb-10 mx-auto w-full max-w-[54rem] px-0 sm:px-2 lg:px-4">
-      <img data-id="pg059_im001" src="images/pg059_im001.jpg" alt="" class="block w-full h-auto" style="max-width: 100%; height: auto;">
-      <span data-id="pg059_n0005" class="absolute left-[33%] top-[36%] text-red-600 text-[1.15rem] sm:text-[1.95rem] lg:text-[2.15rem] leading-none font-normal">fta</span>
-      <span data-id="pg059_n0006" class="absolute left-[50%] top-[38%] text-red-600 text-[1.15rem] sm:text-[1.95rem] lg:text-[2.15rem] leading-none font-normal">sko</span>
-      <span data-id="pg059_n0007" class="absolute left-[67%] top-[38%] text-red-600 text-[1.15rem] sm:text-[1.95rem] lg:text-[2.15rem] leading-none font-normal">ptu</span>
-      <span data-id="pg059_n0008" class="absolute left-[83%] top-[38%] text-red-600 text-[1.15rem] sm:text-[1.95rem] lg:text-[2.15rem] leading-none font-normal">tre</span>
+    <div class="caterpillar-scene mb-6 sm:mb-8 lg:mb-10 mx-auto w-full max-w-[54rem]" data-id="pg059_im001">
+      <div class="caterpillar">
+        <div class="caterpillar-head" aria-hidden="true">
+          <i class="caterpillar-antenna caterpillar-antenna-left"></i>
+          <i class="caterpillar-antenna caterpillar-antenna-right"></i>
+          <i class="caterpillar-eye caterpillar-eye-left"></i>
+          <i class="caterpillar-eye caterpillar-eye-right"></i>
+          <i class="caterpillar-nose"></i>
+          <i class="caterpillar-smile"></i>
+          <i class="caterpillar-cheek caterpillar-cheek-left"></i>
+          <i class="caterpillar-cheek caterpillar-cheek-right"></i>
+        </div>
+        <div class="caterpillar-segment" aria-hidden="true"><i class="caterpillar-leg"></i></div>
+        <div class="caterpillar-segment"><span data-id="pg059_n0005" class="caterpillar-word">fta</span><i class="caterpillar-leg" aria-hidden="true"></i></div>
+        <div class="caterpillar-segment" aria-hidden="true"><i class="caterpillar-leg"></i></div>
+        <div class="caterpillar-segment"><span data-id="pg059_n0006" class="caterpillar-word">sko</span><i class="caterpillar-leg" aria-hidden="true"></i></div>
+        <div class="caterpillar-segment" aria-hidden="true"><i class="caterpillar-leg"></i></div>
+        <div class="caterpillar-segment"><span data-id="pg059_n0007" class="caterpillar-word">ptu</span><i class="caterpillar-leg" aria-hidden="true"></i></div>
+        <div class="caterpillar-segment" aria-hidden="true"><i class="caterpillar-leg"></i></div>
+        <div class="caterpillar-segment"><span data-id="pg059_n0008" class="caterpillar-word">tre</span><i class="caterpillar-leg" aria-hidden="true"></i></div>
+        <div class="caterpillar-segment" aria-hidden="true"><i class="caterpillar-leg"></i></div>
+        <div class="caterpillar-tail caterpillar-tail-large" aria-hidden="true"></div>
+        <div class="caterpillar-tail caterpillar-tail-small" aria-hidden="true"></div>
+      </div>
     </div>
 
     <div class="relative rounded-[1.7rem] border-2 border-[#00cfc7] bg-[#edf7f4] px-4 sm:px-8 lg:px-10 pt-9 sm:pt-12 pb-7 sm:pb-8">
