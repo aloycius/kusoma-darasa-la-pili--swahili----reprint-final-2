@@ -1,0 +1,14 @@
+{
+  "front": {
+    "section_id": "cover-front",
+    "href": "index.html",
+    "title": "Jalada la mbele",
+    "video_key": "cover-front"
+  },
+  "back": {
+    "section_id": "cover-back",
+    "href": "back-cover.html",
+    "title": "Jalada la nyuma",
+    "video_key": "cover-back"
+  }
+}

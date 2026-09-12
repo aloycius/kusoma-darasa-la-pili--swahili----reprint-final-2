@@ -1,7 +1,13 @@
 [
   {
-    "section_id": "pg001_sec001",
+    "section_id": "cover-front",
     "href": "index.html",
+    "title": "Jalada la mbele",
+    "chapter_id": "cover-front"
+  },
+  {
+    "section_id": "pg001_sec001",
+    "href": "pg001_sec001.html",
     "title": "Kusoma",
     "chapter_id": "pg001_n0003"
   },
@@ -460,5 +466,11 @@
     "href": "pg088_sec001.html",
     "title": "Zoezi la tano",
     "chapter_id": "pg088_n0006"
+  },
+  {
+    "section_id": "cover-back",
+    "href": "back-cover.html",
+    "title": "Jalada la nyuma",
+    "chapter_id": "cover-back"
   }
 ]

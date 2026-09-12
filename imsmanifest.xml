@@ -226,6 +226,13 @@
       <file href="content/pages.json" />
       <file href="content/toc.json" />
       <file href="content/i18n/sw-TZ/video/page_86.mp4" />
+      <file href="pg001_sec001.html" />
+      <file href="back-cover.html" />
+      <file href="content/covers.json" />
+      <file href="images/cover-front.webp" />
+      <file href="images/cover-back.webp" />
+      <file href="assets/book-covers.css" />
+      <file href="assets/book-covers.js" />
 </resource>
   </resources>
 
